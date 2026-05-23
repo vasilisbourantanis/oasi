@@ -1,8 +1,3 @@
-Here is the complete, fully updated, and professional `README.md` for OASI. It integrates all the advanced features you built, cleans up the commands, and explicitly addresses the Linux/Kali `externally-managed-environment` restriction so your users never get stuck during installation.
-
-Copy and paste the raw block below directly into your file:
-
-```markdown
 # OASI
 
 <p align="center">
