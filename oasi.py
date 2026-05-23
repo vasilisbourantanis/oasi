@@ -46,7 +46,6 @@ import shutil
 import urllib.request
 import urllib.parse
 import http.client as httplib
-
 import requests
 import urllib3
 import colorama
