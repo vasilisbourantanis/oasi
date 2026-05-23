@@ -2,7 +2,7 @@
 """
 OASI - Open Source Intelligence Tool
 Author: Mata
-Version: 3.7
+Version: 3.8
 """
 
 import argparse
@@ -62,7 +62,7 @@ GITHUB_USER    = "vasilisbourantanis"
 GITHUB_REPO    = "oasi"
 GITHUB_BRANCH  = "master"
 VERSION_FILE   = "core/version.txt"   # path inside the repo
-CURRENT_VER    = "3.7"                # this build's version
+CURRENT_VER    = "3.8"                # this build's version
 
 # Files the updater will pull from GitHub (path-in-repo → local-path)
 UPDATE_FILES = {
