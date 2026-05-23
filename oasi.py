@@ -2,7 +2,7 @@
 """
 OASI - Open Source Intelligence Tool
 Author: Mata
-Version: 3.4
+Version: 3.5
 """
 
 import argparse
@@ -62,7 +62,7 @@ GITHUB_USER    = "vasilisbourantanis"
 GITHUB_REPO    = "oasi"
 GITHUB_BRANCH  = "main"
 VERSION_FILE   = "core/version.txt"   # path inside the repo
-CURRENT_VER    = "3.4"                # this build's version
+CURRENT_VER    = "3.5"                # this build's version
 
 # Files the updater will pull from GitHub (path-in-repo → local-path)
 UPDATE_FILES = {
@@ -110,9 +110,16 @@ def _raw_url(repo_path: str) -> str:
 def _fetch_text(url: str) -> str | None:
     """Return decoded text from URL, or None on error."""
     try:
-        with urllib.request.urlopen(url, timeout=8) as resp:
+        # Δημιουργούμε ένα Request αντικείμενο προσθέτοντας User-Agent
+        req = urllib.request.Request(
+            url, 
+            headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) OASI-Updater'}
+        )
+        with urllib.request.urlopen(req, timeout=8) as resp:
             return resp.read().decode().strip()
-    except Exception:
+    except Exception as e:
+        # Debug print για να βλέπεις το πραγματικό δίκτυακό σφάλμα αν ξανασυμβεί
+        # print(f"[DEBUG] Network Error for {url}: {e}")
         return None
 
 
