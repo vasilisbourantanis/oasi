@@ -9,6 +9,7 @@ import argparse
 import socket
 import sys
 import os
+import subprocess
 # ───────────────────────────────────────────────────────────────────────────
 # ONE-TIME AUTO INSTALLER (Reads requirements.txt & bypasses Linux venv lock)
 # ───────────────────────────────────────────────────────────────────────────
@@ -42,7 +43,6 @@ if not os.path.exists(MARKER_FILE):
 import time
 import json
 import shutil
-import subprocess
 import urllib.request
 import urllib.parse
 import http.client as httplib
