@@ -60,7 +60,7 @@ init(autoreset=True)
 # ──────────────────────────────────────────────
 GITHUB_USER    = "vasilisbourantanis"
 GITHUB_REPO    = "oasi"
-GITHUB_BRANCH  = "main"
+GITHUB_BRANCH  = "master"
 VERSION_FILE   = "core/version.txt"   # path inside the repo
 CURRENT_VER    = "3.5"                # this build's version
 
