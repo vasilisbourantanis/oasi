@@ -59,7 +59,7 @@ init(autoreset=True)
 # ──────────────────────────────────────────────
 #  CONFIG  –  edit these to match your GitHub
 # ──────────────────────────────────────────────
-GITHUB_USER    = "MataGreek"
+GITHUB_USER    = "vasilisbourantanis"
 GITHUB_REPO    = "oasi"
 GITHUB_BRANCH  = "master"
 VERSION_FILE   = "core/version.txt"   # path inside the repo
