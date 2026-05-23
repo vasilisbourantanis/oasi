@@ -31,9 +31,9 @@ init(autoreset=True)
 # ──────────────────────────────────────────────
 GITHUB_USER    = "MataGreek"
 GITHUB_REPO    = "oasi"
-GITHUB_BRANCH  = "main"
+GITHUB_BRANCH  = "master"
 VERSION_FILE   = "core/version.txt"   # path inside the repo
-CURRENT_VER    = "3.0"                # this build's version
+CURRENT_VER    = "3.1"                # this build's version
 
 # Files the updater will pull from GitHub (path-in-repo → local-path)
 UPDATE_FILES = {
