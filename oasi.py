@@ -9,6 +9,36 @@ import argparse
 import socket
 import sys
 import os
+# ───────────────────────────────────────────────────────────────────────────
+# ONE-TIME AUTO INSTALLER (Reads requirements.txt & bypasses Linux venv lock)
+# ───────────────────────────────────────────────────────────────────────────
+MARKER_FILE = ".installed"
+REQ_FILE = "requirements.txt"
+
+if not os.path.exists(MARKER_FILE):
+    print("[*] First run detected! Checking and installing dependencies...")
+    
+    if os.path.exists(REQ_FILE):
+        try:
+            # Executes pip using your requirements.txt file directly
+            # Appends --break-system-packages to cleanly bypass the Kali/Ubuntu lock
+            subprocess.check_call([
+                sys.executable, "-m", "pip", "install", "-r", REQ_FILE, "--break-system-packages", "--quiet"
+            ])
+            
+            # Creates a hidden marker file so this install block never runs again
+            with open(MARKER_FILE, "w") as f:
+                f.write("OASI Dependencies Installed Successfully.")
+                
+            print("[+] All dependencies installed successfully! Launching...\n")
+            
+        except Exception as e:
+            print(f"[!] Error during automatic installation: {e}")
+            print(f"[!] Please run manually: pip3 install -r {REQ_FILE} --break-system-packages")
+            sys.exit(1)
+    else:
+        print(f"[!] {REQ_FILE} not found. Attempting to launch with current system packages...")
+# ───────────────────────────────────────────────────────────────────────────
 import time
 import json
 import shutil

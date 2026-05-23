@@ -121,5 +121,3 @@ If this tool helped you, consider supporting my work by buying me a coffee!
 👉 **[CLICK HERE TO BUY ME A COFFEE](https://www.buymeacoffee.com/mataroot)**
 
 ```
-
-```
